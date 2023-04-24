@@ -38,7 +38,7 @@ class _TodoViewState extends State<TodoView> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          txtTodo = TextEditingController(text: txtTodo.text);
+                          txtTodo = TextEditingController();
                           showDialog(
                             context: context,
                             builder: (context) {
@@ -70,7 +70,8 @@ class _TodoViewState extends State<TodoView> {
                                         ),
                                         TextButton(
                                           onPressed: () {
-                                            proFalse!.addData(txtTodo.text);
+                                            // proTrue!.todoList.removeAt(index);
+                                            // proFalse!.addData(txtTodo.text);
                                             Navigator.pop(context);
                                           },
                                           child: Text(

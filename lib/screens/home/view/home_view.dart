@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               ElevatedButton(
                 onPressed: () =>
-                    Navigator.pushNamed(context, 'todo'),
+                    Navigator.pushNamed(context, 'reg'),
                 child: Text("Todo App"),
               ),
               SizedBox(

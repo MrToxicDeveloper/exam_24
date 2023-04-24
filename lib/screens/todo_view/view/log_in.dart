@@ -51,17 +51,20 @@ class _LoginState extends State<Login> {
                 height: 15,
               ),
               ElevatedButton(
-                onPressed: () {
-                  Future<Map> m1 = proFalse!.readData();
-                  // if (txtName.text == m1['username'] && txtPass.text == m1['pass']) {
-                  //   Navigator.pushReplacementNamed(context, 'todo');
-                  // } else {
-                  //   ScaffoldMessenger.of(context).showSnackBar(
-                  //     SnackBar(
-                  //       content: Text("Invalid Id or Pass"),
-                  //     ),
-                  //   );
-                  // }
+                onPressed: () async{
+                  Map m1 = await proFalse!.readData();
+
+                  String name = txtName.text;
+                  String password = txtPass.text;
+                  print(m1["pass"]);
+                  if(name == m1["username"] && password == m1["pass"])
+                  {
+                    Navigator.pushNamed(context, "todo");
+                  }
+                  else
+                  {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Invali Id and Password"),),);
+                  }
                 },
                 child: Text("Log In"),
               ),
